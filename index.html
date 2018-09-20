@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Concept</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/anim.css" />
+</head>
+
+<body>
+    <div class="container-fluid window">
+        <div class="layers" style="top:100vh;" id="city">
+            <img src="img/city.jpg">
+        </div>
+        <div class="gmiddle">
+            <img src="img/character.png" onclick="initReel()" />
+        </div>
+        <div class="programming">
+            <input type="text" value="" onkeyup="changeview(event.target.value)" id="programming" autofocus />
+        </div>
+    </div>
+    <script>
+        var stroyReel = '';
+        function initReel() {
+            if (stroyReel === '') {
+                stroyReel = 'start';
+            } else {
+                return false;
+            }
+            changeview(stroyReel);
+        }
+var changeview = function(value){
+    stroyReel = value;
+    console.log(value);
+    switch (stroyReel) {
+            case '': document.getElementById("city").style.top = '100vh';
+                break;
+            case 'start': document.getElementById("city").style.top = 0;
+                break;
+
+            case 'dentist': console.log('dentist started');
+                break;
+            default: return false;
+        }
+}
+        
+
+    </script>
+</body>
+
+</html>
