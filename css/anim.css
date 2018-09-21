@@ -1,3 +1,5 @@
+
+* {transition: all 0.8s ease;}
 .window {
   width: 100vw;
   height: 100vh;
@@ -10,7 +12,9 @@
   height: 100vh;
   left: 0;
   top: 0;
+  text-align: center;
 }
+.layers img {width: 1000px;}
 .gmiddle {
   position: absolute;
   top: 0;
@@ -46,3 +50,71 @@ img {
     outline: none;
 }
 
+
+.gmiddle.dentist {
+  /* width: 150px; height: 150px; */
+  width: 0; height: 0;
+  border-radius: 100%; overflow: hidden;
+  left:280px;
+  top:-220px;
+}
+.gmiddle.dentist img {width: 150px;}
+
+.gmiddle.good {
+  /* width: 100px; height: 100px; */
+  width: 0; height: 0;
+  border-radius: 100%; overflow: hidden;
+  left:-280px;
+  font-size: 30px;
+  line-height: 100px;
+  color: blueviolet;
+  background-color: rgba(255,255,255, 0.8);
+  text-align: center;
+}
+
+.gmiddle.fees {
+  /* width: 100px; height: 100px; */
+  width: 0; height: 0;
+  border-radius: 100%; overflow: hidden;
+  left:-280px;
+  font-size: 30px;
+  line-height: 100px;
+  color: blueviolet;
+  background-color: rgba(255,255,255, 0.8);
+  text-align: center;
+  top:-200px;
+}
+
+.phonelayer{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 100vh;
+  text-align: center;
+  background-color: rgb(97, 11, 196);
+}
+.phone {
+  width: 260px;
+  height: 480px;
+  border: 1px solid #fff;
+  background-color: rgb(123, 50, 207);
+  border-radius: 20px;
+
+  position: absolute;
+  top:0; left:0; right:0; bottom: 0; margin: auto; 
+  overflow: hidden;
+}
+.globalMiddle{
+  position: absolute;
+  top:0; left:0; right:0; bottom: 0; margin: auto;
+}
+.card {
+  width: calc(100% - 40px);
+  position: relative;
+  margin: 10px auto;
+  background-color: rgba(255,255,255, 0.6);
+  color:#fff;
+  padding: 10px;
+  font-size: 24px;
+}

@@ -16,7 +16,33 @@
         <div class="layers" style="top:100vh;" id="city">
             <img src="img/city.jpg">
         </div>
-        <div class="gmiddle">
+
+        <div class="gmiddle dentist" id="dentist">
+            <img src="img/dentist.jpg" alt="dentist" />
+        </div>
+        <div class="gmiddle good" id="good">
+            GOOD
+        </div>
+        <div class="gmiddle fees" id="fees">
+            $300
+        </div>
+        <div class="phonelayer" id="appLayer">
+            <div class="phone">
+                <div class="card" id="type" style="transform:translateX(300px)">
+                    type
+                </div>
+                <div class="card" id="location" style="transform:translateX(300px)">
+                    location
+                </div>
+                <div id="search" style="transform:translateY(500px)">
+                    <button class="btn btn-light" onclick="changeview('search')">Search</button>
+                </div>
+                <ul>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="gmiddle" id="me">
             <img src="img/character.png" onclick="initReel()" />
         </div>
         <div class="programming">
@@ -33,21 +59,51 @@
             }
             changeview(stroyReel);
         }
-var changeview = function(value){
-    stroyReel = value;
-    console.log(value);
-    switch (stroyReel) {
-            case '': document.getElementById("city").style.top = '100vh';
-                break;
-            case 'start': document.getElementById("city").style.top = 0;
-                break;
+        var changeview = function (value) {
+            stroyReel = value;
+            switch (stroyReel) {
+                case '': document.getElementById("city").style.top = '100vh';
+                    break;
+                case 'start': document.getElementById("city").style.top = 0;
+                    break;
 
-            case 'dentist': console.log('dentist started');
-                break;
-            default: return false;
+                case 'dentist':
+                    document.getElementById("dentist").style.width = '150px';
+                    document.getElementById("dentist").style.height = '150px';
+                    break;
+                case 'good':
+                    document.getElementById("good").style.width = '100px';
+                    document.getElementById("good").style.height = '100px';
+                    break;
+                case 'fees':
+                    document.getElementById("fees").style.width = '100px';
+                    document.getElementById("fees").style.height = '100px';
+                    break;
+                case 'app':
+                    document.getElementById("city").style.left = '-100vw';
+                    document.getElementById("me").style.left = 'calc(-100vw + 160px)';
+                    document.getElementById("dentist").style.left = 'calc(-100vw - 150px)';
+                    document.getElementById("good").style.left = 'calc(-100vw - 150px)';
+                    document.getElementById("fees").style.left = 'calc(-100vw - 150px)';
+
+                    document.getElementById("appLayer").style.top = 0;
+                    break;
+                case 'type':
+                    document.getElementById("type").style.transform = 'translateX(0)';
+                    break;
+                case 'location':
+                    document.getElementById("search").style.transform = 'translatey(300px)';
+                    document.getElementById("location").style.transform = 'translateX(0)';
+                    break;
+                case 'search':
+                    document.getElementById("search").style.transform = 'translateY(500px)';
+                    document.getElementById("type").style.transform = 'translateX(-300px)';
+                    document.getElementById("location").style.transform = 'translateX(-300px)';
+                    break;
+                default: return false;
+            }
         }
-}
-        
+
 
     </script>
 </body>
