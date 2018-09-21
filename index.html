@@ -37,11 +37,103 @@
                 <div id="search" style="transform:translateY(500px)">
                     <button class="btn btn-light" onclick="changeview('search')">Search</button>
                 </div>
-                <ul>
-                    
+                <ul class="list-group" id="searchlist">
+                    <li class="list-group-item">
+                        <div class="image">
+                            AR
+                        </div>
+                        <div class="details">
+                            Abhijit Roy
+                        </div>
+                        <div class="fees">
+                            <div>$100</div>
+                            <button class="btn btn-dark" onclick="changeview('docview')">book</button>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="image">
+                            SN
+                        </div>
+                        <div class="details">
+                            Somraj Naik
+                        </div>
+                        <div class="fees">
+                            <div>$120</div>
+                            <button class="btn btn-dark" onclick="changeview('docview')">book</button>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="image">
+                            AN
+                        </div>
+                        <div class="details">
+                            Arpita Nag
+                        </div>
+                        <div class="fees">
+                            <div>$200</div>
+                            <button class="btn btn-dark" onclick="changeview('docview')">book</button>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="image">
+                            BD
+                        </div>
+                        <div class="details">
+                            Baljit Dev
+                        </div>
+                        <div class="fees">
+                            <div>$100</div>
+                            <button class="btn btn-dark" onclick="changeview('docview')">book</button>
+                        </div>
+                    </li>
                 </ul>
+                <div class="dDash" id="ddash">
+                    <div class="card">
+                        <img class="card-img-top" src="https://randomuser.me/api/portraits/lego/5.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Patient Name</h5>
+                            <p class="card-text">Details...</p>
+                        </div>
+                        <div class="card-body">
+                            <button class="btn btn-primary" onclick="changeview('prescribe')">prescribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dDash" id="prescribe">
+                    <div class="presform">
+
+                        <input type="text" class="medname" placeholder="med name" />
+                        <input type="radio" class="radname" name="taketime" value="before" id="before">
+                        <label for="before">before</label>
+                        <input type="radio" class="radname" name="taketime" value="after" id="after">
+                        <label for="after">after</label>
+                        <input type="number" class="number">
+                    </div>
+                    <div class="presform">
+
+                        <input type="text" class="medname" placeholder="med name" />
+                        <input type="radio" class="radname" name="taketime" value="before" id="before">
+                        <label for="before">before</label>
+                        <input type="radio" class="radname" name="taketime" value="after" id="after">
+                        <label for="after">after</label>
+                        <input type="number" class="number">
+                    </div>
+                    <div class="presform">
+
+                        <input type="text" class="medname" placeholder="med name" />
+                        <input type="radio" class="radname" name="taketime" value="before" id="before">
+                        <label for="before">before</label>
+                        <input type="radio" class="radname" name="taketime" value="after" id="after">
+                        <label for="after">after</label>
+                        <input type="number" class="number">
+                    </div>
+                    <div class="presform">
+                        <button class="btn btn-success" onclick="changeview('complete')">Done</button>
+                    </div>
+                </div>
             </div>
         </div>
+        <button type="button" class="btn btn-warning globalMiddle" id="payment">$200</button>
         <div class="gmiddle" id="me">
             <img src="img/character.png" onclick="initReel()" />
         </div>
@@ -99,6 +191,29 @@
                     document.getElementById("search").style.transform = 'translateY(500px)';
                     document.getElementById("type").style.transform = 'translateX(-300px)';
                     document.getElementById("location").style.transform = 'translateX(-300px)';
+                    document.getElementById("searchlist").style.transform = 'translateX(0px)';
+                    break;
+                case 'docview':
+                    document.getElementById('ddash').style.left = 0;
+                    document.getElementById("searchlist").style.transform = 'translateX(-300px)';
+                    document.getElementById("payment").style.opacity = 1;
+                    document.getElementById("payment").style.top = '-560px';
+                    document.getElementById("payment").style.zIndex = 1;
+                    break;
+                case 'prescribe':
+                    document.getElementById('ddash').style.left = '-300px';
+                    document.getElementById('prescribe').style.left = '0';
+
+                    break;
+                case 'complete':
+                    document.getElementById("payment").style.opacity = 0;
+                    document.getElementById("payment").style.top = 0;
+                    // document.getElementById("payment").style.zIndex = -1;
+                    break;
+                case 'done':
+                    document.getElementById("city").style.left = 0;
+                    document.getElementById("appLayer").style.top = '100vh';
+                    document.getElementById("me").style.left = 0;
                     break;
                 default: return false;
             }
